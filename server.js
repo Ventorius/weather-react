@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(function(req, res, next) {
 
-    openmap uzywa tylko http
+    // openmap uzywa tylko http
     if (req.headers['x-forwarded-proto'] = 'http') {
         next();
     } else {
