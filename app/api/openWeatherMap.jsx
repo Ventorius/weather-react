@@ -1,6 +1,6 @@
 var axios = require('axios');
 
-const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=f03d91ecc7d0b0ed7cf1213538221a98&units=metric';
+const OPEN_WEATHER_MAP_URL = '//api.openweathermap.org/data/2.5/weather?appid=f03d91ecc7d0b0ed7cf1213538221a98&units=metric';
 
 module.exports = {
     getTemp: function (location) {
