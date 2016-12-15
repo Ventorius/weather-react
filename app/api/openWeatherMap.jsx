@@ -1,7 +1,5 @@
 var axios = require('axios');
 
-// http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f03d91ecc7d0b0ed7cf1213538221a98&units=metric
-
 const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=f03d91ecc7d0b0ed7cf1213538221a98&units=metric';
 
 module.exports = {
