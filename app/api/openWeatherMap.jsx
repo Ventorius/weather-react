@@ -1,0 +1,24 @@
+var axios = require('axios');
+
+// http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f03d91ecc7d0b0ed7cf1213538221a98&units=metric
+
+const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=f03d91ecc7d0b0ed7cf1213538221a98&units=metric';
+
+module.exports = {
+    getTemp: function (location) {
+        var encodedLocation = encodeURIComponent(location);
+        var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
+
+        return axios.get(requestUrl).then(function (res) {
+
+            if(res.data.cod && res.data.message){
+                throw new Error(res.data.message);
+            }else{
+                return res.data.main.temp;
+            }
+
+        }, function (res) {
+            throw new Error(res.data.message)
+        })
+    }
+};
